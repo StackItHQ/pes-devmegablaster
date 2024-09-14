@@ -1,7 +1,11 @@
 package main
 
-import "fmt"
+import (
+	"github.com/StackItHQ/pes-devmegablaster/internal/config"
+	"github.com/StackItHQ/pes-devmegablaster/internal/database"
+)
 
 func main() {
-	fmt.Println("Hello World!")
+	config.Init()
+	database.New()
 }
