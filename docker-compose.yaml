@@ -1,0 +1,20 @@
+services:
+
+  api:
+    build: .
+    container_name: stackit
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    restart: always
+
+  db:
+    image: "postgres:12" 
+    ports:
+      - "5432:5432"
+    container_name: postgres
+    environment:
+      POSTGRES_USER: "stackit"
+      POSTGRES_PASSWORD: "stackit"
+      POSTGRES_DB: "stackit"
